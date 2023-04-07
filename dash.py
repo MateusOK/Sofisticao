@@ -48,17 +48,43 @@ poster_scheduled = ctk.CTkFrame(root, bg_color="white", width=250,
                                 height=180, border_color="#D9D9D9", border_width=1, fg_color="#EA8C00")
 poster_scheduled.place(relx=0.39, rely=0.2, anchor=tkinter.CENTER)
 
+value_scheduled = ctk.CTkLabel(root, text="8", font=ctk.CTkFont(
+    family="Open Sans", size=80, weight="bold"), fg_color="#EA8C00", text_color="white")
+value_scheduled.place(relx=0.390, rely=0.180, anchor=tkinter.CENTER)
+
+description_scheduled = ctk.CTkLabel(root, text="Pets agendados", font=ctk.CTkFont(
+    family="Open Sans", size=20, weight="bold"), fg_color="#EA8C00", text_color="white")
+description_scheduled.place(relx=0.390, rely=0.260, anchor=tkinter.CENTER)
+
 
 # Answered
 poster_answered = ctk.CTkFrame(root, bg_color="white", width=250,
                                height=180, border_color="#D9D9D9", border_width=1, fg_color="#EA8C00")
 poster_answered.place(relx=0.60, rely=0.2, anchor=tkinter.CENTER)
 
+value_answered = ctk.CTkLabel(root, text="4", font=ctk.CTkFont(
+    family="Open Sans", size=80, weight="bold"), fg_color="#EA8C00", text_color="white")
+value_answered.place(relx=0.6, rely=0.180, anchor=tkinter.CENTER)
+
+description_answered = ctk.CTkLabel(root, text="Pets atendidos", font=ctk.CTkFont(
+    family="Open Sans", size=20, weight="bold"), fg_color="#EA8C00", text_color="white")
+description_answered.place(relx=0.6, rely=0.260, anchor=tkinter.CENTER)
+
 
 # Total
 poster_total = ctk.CTkFrame(root, bg_color="white", width=250,
                             height=180, border_color="#D9D9D9", border_width=1, fg_color="#EA8C00")
 poster_total.place(relx=0.81, rely=0.2, anchor=tkinter.CENTER)
+
+value_total = ctk.CTkLabel(root, text="82", font=ctk.CTkFont(
+    family="Open Sans", size=80, weight="bold"), fg_color="#EA8C00", text_color="white")
+value_total.place(relx=0.81, rely=0.180, anchor=tkinter.CENTER)
+
+description_total = ctk.CTkLabel(root, text="Clientes totais", font=ctk.CTkFont(
+    family="Open Sans", size=20, weight="bold"), fg_color="#EA8C00", text_color="white")
+description_total.place(relx=0.81, rely=0.260, anchor=tkinter.CENTER)
+
+
 ############### CONTAINER - BOX ###############
 
 # container
