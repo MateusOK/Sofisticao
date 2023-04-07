@@ -43,6 +43,13 @@ exit_button = ctk.CTkButton(root, image=exit_logo, text="  Sair", text_color="bl
 
 ################ POSTER  ###############
 
+# Dashboard - Titlte
+
+title_poster = ctk.CTkLabel(root, text="Dashboard", font=ctk.CTkFont(
+    family="Nunito", size=20, weight="bold"), fg_color="white", text_color="black")
+title_poster.place(relx=0.6, rely=0.040, anchor=tkinter.CENTER)
+
+
 # Scheduled
 poster_scheduled = ctk.CTkFrame(root, bg_color="white", width=250,
                                 height=180, border_color="#D9D9D9", border_width=1, fg_color="#EA8C00")
