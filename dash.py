@@ -1,44 +1,46 @@
-from tkinter import *
-import ttkbootstrap as ttk
-from ttkbootstrap.constants import *
+import tkinter
+import customtkinter as ctk
+from PIL import Image
 
-root = Tk()
-
-root.title("Dashboard - Sofisticão")
-
+root = ctk.CTk()  # create CTk window like you do with the Tk window
+root.geometry("1280x720")
+root.resizable(False, False)
 root.config(background="#FFFFFF")
 
+division = ctk.CTkFrame(root, bg_color="white", width=250,
+                        height=1450,  fg_color="#E0E0E0")
+division.place(relx=0, rely=0, anchor=tkinter.W)
 
-# window size
-root.resizable(False, False)
-root.maxsize(width=1280, height=720)
-root.minsize(width=1280, height=720)
 
-frame = Frame(root)
-frame.pack(fill=BOTH, expand=True)
 
 
 #images
-logo_image = PhotoImage(file="assets\\dog_logo.png")
-side_image = PhotoImage(file="assets\\side_line.png")
-dash_logo = PhotoImage(file="assets\\dashboard_logo.png")
+logo_image = ctk.CTkImage(light_image=Image.open("assets\\dog_logo.png"))
+side_image = ctk.CTkImage(light_image=Image.open("assets\\side_line.png"))
+dash_logo = ctk.CTkImage(light_image=Image.open("assets\\dashboard_logo_white.png"))
+client_logo = ctk.CTkImage(light_image=Image.open("assets\\client_logo.png"))
+services_logo = ctk.CTkImage(light_image=Image.open("assets\\services_logo.png"))
 
 #labels
-logo_label = Label(frame, image=logo_image)
-side_line_label = Label(frame, image=side_image)
-title = ttk.Label(frame, text="Sofisticão", font="Nunito 25 bold", bootstyle="success")
+# logo_label = ctk.CTkLabel(frame, image=logo_image)
+# side_line_label = ctk.CTkLabel(frame, image=side_image)
+#title = ctk.CTkLabel(root, text="Sofisticão",font=ctk.CTkFont(family="Nunito", weight="bold", size=25))
 
 #buttons
-dash_button = Button(frame, text="Dashboard", font="OpenSans 16 bold", fg="#FFFFFF", image=dash_logo, compound=LEFT)
+dash_button = ctk.CTkButton(root, text="Dashboard", image=dash_logo, fg_color="#27AE60",
+                            corner_radius=5, height=35, width=180, bg_color="#F2F2F2")
+client_button = ctk.CTkButton(root, text="    Clientes", text_color="black", image=client_logo, corner_radius=7, 
+                              fg_color="white", height=35, width=180, bg_color="#E0E0E0")
+services_button  = ctk.CTkButton(root, image=services_logo, text="  Serviços", text_color="black", corner_radius=7,
+                                  fg_color="white", height=35, width=180, bg_color="#E0E0E0")
 
 
-
-
-#posicionamento na tela
-logo_label.place(x=60, y=20)
-title.place(x=40, y=180)
-side_line_label.place(x=20,y=300)
-dash_button.pack()
+# # #posicionamento na tela
+# logo_label.place(x=60, y=20)
+# side_line_label.place(x=15,y=300)
+services_button.place(x=40, y=400)
+dash_button.place(x=40, y=300)
+client_button.place(x=40, y=350)
 
 
 
