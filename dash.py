@@ -30,15 +30,15 @@ exit_logo = ctk.CTkImage(light_image=Image.open("assets\\exit_logo.png"))
 
 # buttons
 dash_button = ctk.CTkButton(root, text="Dashboard", image=dash_logo, fg_color="#27AE60",
-                            corner_radius=5, height=35, width=180, bg_color="#F2F2F2")
+                            corner_radius=5, height=35, width=180, bg_color="#F2F2F2",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"))
 client_button = ctk.CTkButton(root, text="       Clientes", text_color="black", image=client_logo, corner_radius=7,
-                              fg_color="white", height=35, width=180, bg_color="#E0E0E0")
+                              fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"))
 services_button = ctk.CTkButton(root, image=services_logo, text="      Serviços", text_color="black", corner_radius=7,
-                                fg_color="white", height=35, width=180, bg_color="#E0E0E0")
+                                fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"))
 animals_button = ctk.CTkButton(root, image=animals_logo, text="        Animais", text_color="black", corner_radius=7,
-                               fg_color="white", height=35, width=180, bg_color="#E0E0E0")
+                               fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"))
 exit_button = ctk.CTkButton(root, image=exit_logo, text="  Sair", text_color="black", corner_radius=7,
-                            fg_color="white", height=35, width=180, bg_color="#E0E0E0", compound="right")
+                            fg_color="white", height=35, width=180, bg_color="#E0E0E0", compound="right", font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"))
 
 
 ############### CONTAINER - BOX ###########################
