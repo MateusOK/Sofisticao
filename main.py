@@ -8,7 +8,6 @@ root.title("Login - Sofisticão")
 
 root.config(background='#FFFFFF')
 
-#root.geometry("{}x{}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
 
 # window size
 root.resizable(False, False)
@@ -34,6 +33,11 @@ logo_label = Label(frame, image=logo)
 title = ttk.Label(frame, text="Sofisticão", font="Nunito 35 bold", bootstyle="success")
 email_input = ttk.Entry(frame, bootstyle=SUCCESS, width=25, font="Arial 18")
 email_text = ttk.Label(frame, text="Email", font="Nunito 12 bold", bootstyle=SUCCESS)
+password_input = ttk.Entry(frame, bootstyle=SUCCESS, width=25, font="Arial 18", show="*")
+password_text = ttk.Label(frame, text="Senha", font="Nunito 12 bold", bootstyle=SUCCESS)
+check = ttk.Checkbutton(frame, text="Continuar conectado", bootstyle="success")
+senha_esquece = Label(frame, text="Esqueci minha senha", font="Nunito 8 bold underline")
+entrar_button = ttk.Button(frame, text="Entrar", bootstyle=SUCCESS, width=52)
 
 # Crie um rótulo para o texto
 text_label = Label(frame, text="Meu texto aqui")
@@ -45,5 +49,10 @@ right_label.pack(side=RIGHT)
 email_input.place(x=465, y=400)
 title.place(x=520, y=300)
 email_text.place(x=470, y=370)
+password_input.place(x=465, y=485)
+password_text.place(x=465, y=455)
+check.place(x=465, y=560)
+senha_esquece.place(x=680, y=557)
+entrar_button.place(x=465, y=600)
 
 root.mainloop()
