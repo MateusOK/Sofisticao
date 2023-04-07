@@ -41,7 +41,25 @@ exit_button = ctk.CTkButton(root, image=exit_logo, text="  Sair", text_color="bl
                             fg_color="white", height=35, width=180, bg_color="#E0E0E0", compound="right", font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"))
 
 
-############### CONTAINER - BOX ###########################
+################ POSTER  ###############
+
+# Scheduled
+poster_scheduled = ctk.CTkFrame(root, bg_color="white", width=250,
+                                height=180, border_color="#D9D9D9", border_width=1, fg_color="#EA8C00")
+poster_scheduled.place(relx=0.39, rely=0.2, anchor=tkinter.CENTER)
+
+
+# Answered
+poster_answered = ctk.CTkFrame(root, bg_color="white", width=250,
+                               height=180, border_color="#D9D9D9", border_width=1, fg_color="#EA8C00")
+poster_answered.place(relx=0.60, rely=0.2, anchor=tkinter.CENTER)
+
+
+# Total
+poster_total = ctk.CTkFrame(root, bg_color="white", width=250,
+                            height=180, border_color="#D9D9D9", border_width=1, fg_color="#EA8C00")
+poster_total.place(relx=0.81, rely=0.2, anchor=tkinter.CENTER)
+############### CONTAINER - BOX ###############
 
 # container
 container = ctk.CTkFrame(root, bg_color="white", width=790,
