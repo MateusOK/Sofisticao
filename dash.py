@@ -43,7 +43,7 @@ exit_button = ctk.CTkButton(root, image=exit_logo, text="  Sair", text_color="bl
 
 ################ POSTER  ###############
 
-# Dashboard - Titlte
+# Dashboard - Title
 
 title_poster = ctk.CTkLabel(root, text="Dashboard", font=ctk.CTkFont(
     family="Nunito", size=20, weight="bold"), fg_color="white", text_color="black")
