@@ -33,7 +33,7 @@ check = ctk.CTkCheckBox(root, text="Continuar conectado" , bg_color="white", fg_
                         border_color="#F2800D", hover_color="#F2800D", checkbox_height=20, checkbox_width=20, 
                         font=ctk.CTkFont(family="Nunito", size=12))
 senha_esquece = ctk.CTkLabel(root, text="Esqueci minha senha", font=ctk.CTkFont(family="Nunito", size=10, underline=True), bg_color="white", text_color="black")
-entrar_button = ctk.CTkButton(root, text="Entrar", width=250, height=48, fg_color="#FFA826", hover_color="#FF9D0A", command=openDash)
+entrar_button = ctk.CTkButton(root, text="Entrar", width=250, height=48, bg_color="white" ,fg_color="#FFA826", hover_color="#FF9D0A", command=openDash)
 
 # Crie um rótulo para o texto
 
