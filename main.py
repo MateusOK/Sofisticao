@@ -18,8 +18,8 @@ right_image = PhotoImage(file="assets\\rightImage.png")
 
 # Abrir a dashboard
 def openDash():
+   root.destroy()
    dashWindow()
-
 
 # # Crie rótulos para exibir as imagens
 logo_label = ctk.CTkLabel(root, text="", image=logo, bg_color="white")
