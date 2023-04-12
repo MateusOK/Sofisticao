@@ -28,15 +28,15 @@ password_text = ctk.CTkLabel(root, text="Senha", bg_color="white", text_color="#
 check = ctk.CTkCheckBox(root, text="Continuar conectado" , bg_color="white", fg_color="#F2800D", text_color="black", 
                         border_color="#F2800D", hover_color="#F2800D", checkbox_height=20, checkbox_width=20, 
                         font=ctk.CTkFont(family="Nunito", size=12))
-senha_esquece = ctk.CTkLabel(root, text="Esqueci minha senha", font=ctk.CTkFont(family="Nunito", size=10), bg_color="white", text_color="black")
-# entrar_button = ttk.Button(frame, text="Entrar", bootstyle=SUCCESS, width=52)
+senha_esquece = ctk.CTkLabel(root, text="Esqueci minha senha", font=ctk.CTkFont(family="Nunito", size=10, underline=True), bg_color="white", text_color="black")
+entrar_button = ctk.CTkButton(root, text="Entrar", width=250, height=48, fg_color="#FFA826", hover_color="#FF9D0A")
 
 # Crie um rótulo para o texto
 
 #Posicionamento da e laterais
 logo_label.place(x=520, y=100)
 left_label.grid(row=0, column=0)
-right_label.place(x=1050,y=0)
+right_label.place(x=1085,y=0)
 
 #Posicionamento dos inputs
 email_input.place(x=520, y=400)
@@ -46,6 +46,9 @@ password_input.place(x=520, y=470)
 email_text.place(x=522, y=370)
 password_text.place(x=522, y=440)
 check.place(x=520, y=510)
-senha_esquece.place(x=650, y=505)
+senha_esquece.place(x=675, y=507)
+
+# Posicionamento do botão
+entrar_button.place(x=520, y=560)
 
 root.mainloop()
