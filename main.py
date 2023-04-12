@@ -2,6 +2,7 @@ import tkinter
 import customtkinter as ctk
 from PIL import Image
 from tkinter import PhotoImage
+from dash import dashWindow
 
 
 root = ctk.CTk()  # create CTk window like you do with the Tk window
@@ -15,6 +16,9 @@ logo = ctk.CTkImage(light_image=Image.open("assets\\dog_logo_login.png"), size=(
 left_image = PhotoImage(file="assets\\leftImage.png")
 right_image = PhotoImage(file="assets\\rightImage.png")
 
+# Abrir a dashboard
+def openDash():
+   dashWindow()
 
 
 # # Crie rótulos para exibir as imagens
@@ -29,7 +33,7 @@ check = ctk.CTkCheckBox(root, text="Continuar conectado" , bg_color="white", fg_
                         border_color="#F2800D", hover_color="#F2800D", checkbox_height=20, checkbox_width=20, 
                         font=ctk.CTkFont(family="Nunito", size=12))
 senha_esquece = ctk.CTkLabel(root, text="Esqueci minha senha", font=ctk.CTkFont(family="Nunito", size=10, underline=True), bg_color="white", text_color="black")
-entrar_button = ctk.CTkButton(root, text="Entrar", width=250, height=48, fg_color="#FFA826", hover_color="#FF9D0A")
+entrar_button = ctk.CTkButton(root, text="Entrar", width=250, height=48, fg_color="#FFA826", hover_color="#FF9D0A", command=openDash)
 
 # Crie um rótulo para o texto
 
