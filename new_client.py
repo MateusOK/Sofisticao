@@ -31,6 +31,11 @@ def newClientWindow():
         from clients import clientsWindow
         clientsWindow()
 
+    def openServices():
+        root.destroy()
+        from services import servicesWindow
+        servicesWindow()
+
     # images
     logo = ctk.CTkImage(light_image=Image.open("assets\\logo.png"), size=(200,160))
     dash_logo = ctk.CTkImage(light_image=Image.open(
@@ -53,7 +58,8 @@ def newClientWindow():
     client_button = ctk.CTkButton(root, text="       Clientes", image=client_logo, corner_radius=7,
                                 fg_color="#F2800D", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=backClients)
     services_button = ctk.CTkButton(root, image=services_logo, text="      Serviços", text_color="black", corner_radius=7,
-                                    fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
+                                    fg_color="white", height=35, width=180, bg_color="#E0E0E0",  
+                                    font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=openServices)
     animals_button = ctk.CTkButton(root, image=animals_logo, text="        Animais", text_color="black", corner_radius=7,
                                 fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
     exit_button = ctk.CTkButton(root, image=exit_logo, text="  Sair", text_color="black", corner_radius=7,
