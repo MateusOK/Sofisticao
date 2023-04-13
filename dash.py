@@ -156,25 +156,16 @@ def dashWindow():
     clock_text.place(relx=0.468, rely=0.511, anchor=tkinter.CENTER)
 
     # status - container
-    status_text = ctk.CTkFrame(root, bg_color="red",  fg_color="white", width=71, height=2)
     animal_title.place(relx=0.395, rely=0.449, anchor=tkinter.CENTER)
 
-    status_text.place(relx=0.325, rely=0.55, anchor=tkinter.CENTER)
+    status_text = ctk.CTkFrame(root, bg_color="#F2994A",  fg_color="#F2994A", width=71, height=2)
+    status_text.place(relx=0.325, rely=0.575, anchor=tkinter.CENTER)
 
     # in progress - status - container
-    in_progress_text = ctk.CTkLabel(root, text="em andamento", font=ctk.CTkFont(
+    in_progress_text = ctk.CTkLabel(root, text="Em andamento", font=ctk.CTkFont(
         family="Open Sans", size=16, weight="bold"), fg_color="white", text_color="#F2994A")
-    in_progress_text.place(relx=0.415, rely=0.55, anchor=tkinter.CENTER)
+    in_progress_text.place(relx=0.405, rely=0.575, anchor=tkinter.CENTER)
 
-    # owner - container
-    owner_text = ctk.CTkLabel(root, text="Dono: ", font=ctk.CTkFont(
-        family="Open Sans", size=16, weight="bold"), fg_color="white", text_color="#292929")
-    owner_text.place(relx=0.324, rely=0.580, anchor=tkinter.CENTER)
-
-    # waiting - owner - container
-    waiting_text = ctk.CTkLabel(root, text="Aguardando", font=ctk.CTkFont(
-        family="Open Sans", size=16, weight="bold"), fg_color="white", text_color="#F2994A")
-    waiting_text.place(relx=0.385, rely=0.580, anchor=tkinter.CENTER)
 
 
     # division - container
@@ -198,17 +189,31 @@ def dashWindow():
         family="Open Sans", size=16), fg_color="white", text_color="#717171")
     description_information_2.place(relx=0.708, rely=0.480, anchor=tkinter.CENTER)
 
+    # Animal informations
+
+    # Animal
+    animal_title_description = ctk.CTkLabel(root, text="Animal: Gato", font=ctk.CTkFont(
+        family="Open Sans", size=16), fg_color="white", text_color="#292929")
+    animal_title_description.place(relx=0.540, rely=0.525, anchor=tkinter.CENTER)
+
+    # Gender
+    gender_title_description = ctk.CTkLabel(root, text="Sexo: Masculino", font=ctk.CTkFont(
+        family="Open Sans", size=16), fg_color="white", text_color="#292929")
+    gender_title_description.place(relx=0.7, rely=0.525, anchor=tkinter.CENTER)
+
+    # Age
+    age_title_description = ctk.CTkLabel(root, text="Idade: 8 anos", font=ctk.CTkFont(
+        family="Open Sans", size=16), fg_color="white", text_color="#292929")
+    age_title_description.place(relx=0.865, rely=0.525, anchor=tkinter.CENTER)
 
     # price - container
-    price_text = ctk.CTkLabel(root, text="R$ 75,00", font=ctk.CTkFont(
-        family="Open Sans", size=16, weight="bold"), fg_color="white", text_color="#292929")
-    price_text.place(relx=0.858, rely=0.4, anchor=tkinter.CENTER)
+    price_text = ctk.CTkLabel(root, text="Preço da consulta", font=ctk.CTkFont(
+        family="Open Sans", size=16, weight="bold"), fg_color="white", text_color="black")
+    price_text.place(relx=0.795, rely=0.575, anchor=tkinter.CENTER)
 
-    circle_price = ctk.CTkImage(light_image=Image.open(
-        "assets\dashboard__container\circle_price.png"), size=(10, 10))
-    circle_price_label = ctk.CTkLabel(
-        root, text="", image=circle_price, fg_color="white")
-    circle_price_label.place(relx=0.895, rely=0.4, anchor=tkinter.CENTER)
+    price_value = ctk.CTkLabel(root, text="R$75,00", font=ctk.CTkFont(
+        family="Open Sans", size=16, weight="bold"), fg_color="white", text_color="#F2994A")
+    price_value.place(relx=0.880, rely=0.575, anchor=tkinter.CENTER)
 
     # posicionamento na tela
 
@@ -221,3 +226,5 @@ def dashWindow():
 
 
     root.mainloop()
+
+dashWindow()
