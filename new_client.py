@@ -25,6 +25,11 @@ def newClientWindow():
         root.destroy()
         from dash import dashWindow
         dashWindow()
+    
+    def backClients():
+        root.destroy()
+        from clients import clientsWindow
+        clientsWindow()
 
     # images
     logo = ctk.CTkImage(light_image=Image.open("assets\\logo.png"), size=(200,160))
@@ -46,7 +51,7 @@ def newClientWindow():
     dash_button = ctk.CTkButton(root, text="Dashboard", image=dash_logo, fg_color="white", text_color="black",
                                 corner_radius=5, height=35, width=180, bg_color="#F2F2F2",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=openDash)
     client_button = ctk.CTkButton(root, text="       Clientes", image=client_logo, corner_radius=7,
-                                fg_color="#F2800D", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
+                                fg_color="#F2800D", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=backClients)
     services_button = ctk.CTkButton(root, image=services_logo, text="      Serviços", text_color="black", corner_radius=7,
                                     fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
     animals_button = ctk.CTkButton(root, image=animals_logo, text="        Animais", text_color="black", corner_radius=7,
@@ -56,7 +61,7 @@ def newClientWindow():
     save_button = ctk.CTkButton(root, image=save_logo, text="  Salvar", text_color="white", corner_radius=7,
                                 fg_color="#FFA826", height=35, width=200, bg_color="#E0E0E0", font=ctk.CTkFont(family="Nunito", size=15, weight="bold"), hover_color="#F2800D", cursor="hand2")
     quit_button = ctk.CTkButton(root, image=quit_logo, text="", text_color="white",
-                                fg_color="white", height=5, width=5, bg_color="white", hover_color="white")
+                                fg_color="white", height=5, width=5, bg_color="white", hover_color="white", command=backClients)
 
 
     #entrys

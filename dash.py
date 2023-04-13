@@ -1,6 +1,7 @@
 import tkinter
 import customtkinter as ctk
 from PIL import Image
+from clients import clientsWindow
 
 def dashWindow():
     root = ctk.CTk()  # create CTk window like you do with the Tk window
@@ -20,6 +21,10 @@ def dashWindow():
     #commands
     def sair():
         root.destroy()
+    
+    def openClient():
+        root.destroy()
+        clientsWindow()
 
     # images
     logo = ctk.CTkImage(light_image=Image.open("assets\\logo.png"), size=(200,160))
@@ -38,7 +43,7 @@ def dashWindow():
     dash_button = ctk.CTkButton(root, text="Dashboard", image=dash_logo, fg_color="#F2800D",
                                 corner_radius=5, height=35, width=180, bg_color="#F2F2F2",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
     client_button = ctk.CTkButton(root, text="       Clientes", text_color="black", image=client_logo, corner_radius=7,
-                                fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
+                                fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=openClient)
     services_button = ctk.CTkButton(root, image=services_logo, text="      Serviços", text_color="black", corner_radius=7,
                                     fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
     animals_button = ctk.CTkButton(root, image=animals_logo, text="        Animais", text_color="black", corner_radius=7,
