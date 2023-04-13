@@ -38,7 +38,7 @@ def openDash():
       password_input_wrong.place(x=520, y=470)
       password_text_wrong.place(x=522, y=440)
 
-      entrar_button_wrong = ctk.CTkButton(root, text="teste", width=250, height=48, bg_color="white" ,fg_color="#FFA826", hover_color="#FF9D0A", command=check_login)
+      entrar_button_wrong = ctk.CTkButton(root, text="Entrar", width=250, height=48, bg_color="white" ,fg_color="#FFA826", hover_color="#FF9D0A", command=check_login)
       entrar_button_wrong.place(x=520, y=560)
 
 
