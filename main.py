@@ -19,7 +19,7 @@ right_image = PhotoImage(file="assets\\rightImage.png")
 
 # Abrir a dashboard
 def openDash():
-   if password_input.get().lower == "admin" and email_input.get().lower() == "admin":
+   if password_input.get().lower() == "admin" and email_input.get().lower() == "admin":
          root.destroy()
          dashWindow()
    else:
