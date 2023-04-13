@@ -226,5 +226,3 @@ def dashWindow():
 
 
     root.mainloop()
-
-dashWindow()

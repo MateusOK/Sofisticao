@@ -16,10 +16,36 @@ logo = ctk.CTkImage(light_image=Image.open("assets\\dog_logo_login.png"), size=(
 left_image = PhotoImage(file="assets\\leftImage.png")
 right_image = PhotoImage(file="assets\\rightImage.png")
 
+
 # Abrir a dashboard
 def openDash():
-   root.destroy()
-   dashWindow()
+
+   if password_input.get() == "admin" and email_input.get() == "admin":
+         root.destroy()
+         dashWindow()
+   else:
+
+      global password_input_wrong
+      global email_input_wrong
+
+      email_input_wrong = ctk.CTkEntry(root, bg_color="white", fg_color="white", placeholder_text="Email inválido", text_color="#FF0000", border_color="#FF0000" ,width=250, height=30)
+      email_text = ctk.CTkLabel(root, text="Email", bg_color="white", text_color="#FF0000", font=ctk.CTkFont(family="Nunito", size=12, weight="bold")) 
+      email_input_wrong.place(x=520, y=400)
+      email_text.place(x=522, y=370)
+
+      password_input_wrong = ctk.CTkEntry(root, placeholder_text="Senha incorreta", show="*", fg_color="white", bg_color="white", text_color="#FF0000", border_color="#FF0000", width=250, height=30)
+      password_text_wrong = ctk.CTkLabel(root, text="Senha", bg_color="white", text_color="#FF0000", font=ctk.CTkFont(family="Nunito", size=12, weight="bold"))
+      password_input_wrong.place(x=520, y=470)
+      password_text_wrong.place(x=522, y=440)
+
+      entrar_button_wrong = ctk.CTkButton(root, text="teste", width=250, height=48, bg_color="white" ,fg_color="#FFA826", hover_color="#FF9D0A", command=check_login)
+      entrar_button_wrong.place(x=520, y=560)
+
+
+def check_login():
+   if email_input_wrong.get() == "admin" and password_input_wrong.get() == "admin":
+      root.destroy()
+      dashWindow()
 
 # # Crie rótulos para exibir as imagens
 logo_label = ctk.CTkLabel(root, text="", image=logo, bg_color="white")
