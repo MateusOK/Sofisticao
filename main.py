@@ -16,7 +16,6 @@ logo = ctk.CTkImage(light_image=Image.open("assets\\dog_logo_login.png"), size=(
 left_image = PhotoImage(file="assets\\leftImage.png")
 right_image = PhotoImage(file="assets\\rightImage.png")
 
-
 # Abrir a dashboard
 def openDash():
    if password_input.get()== "admin" and email_input.get() == "admin":
