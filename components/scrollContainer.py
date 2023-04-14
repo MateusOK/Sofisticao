@@ -1,23 +1,15 @@
 import tkinter
 import customtkinter
 from PIL import Image
-from card import Card
+from components.card import Card
+from components.blueCard import BlueCard
 
 class MyFrame(customtkinter.CTkScrollableFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
-        teste = Card(self)
-        teste2 = Card(self)
-        teste.grid(row=0, column=0)
-        teste2.grid(row=1, column=0)
-
- 
-
-class App(customtkinter.CTk):
-    def __init__(self):
-        super().__init__()
-
-        self.my_frame = MyFrame(master=self, width=825, height=210)
-        self.my_frame.grid(row=0, column=0, padx=20, pady=20)
-app = App()
-app.mainloop()
+        cardBox = Card(master=self)
+        cardBox2 = BlueCard(master=self)
+        cardBox3 = Card(master=self)
+        cardBox.grid(row=0, column=0)
+        cardBox2.grid(row=1, column=0)
+        cardBox3.grid(row=2, column=0)
