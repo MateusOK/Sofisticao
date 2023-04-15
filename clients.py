@@ -2,6 +2,7 @@ import tkinter
 import customtkinter as ctk
 from PIL import Image
 from new_client import newClientWindow
+from components.menu import Menu
 
 def clientsWindow():
     root = ctk.CTk()  # create CTk window like you do with the Tk window
@@ -9,62 +10,8 @@ def clientsWindow():
     root.resizable(False, False)
     root.config(background="#FFFFFF")
 
-    division = ctk.CTkFrame(root, bg_color="white", width=250,
-                            height=1450,  fg_color="#E0E0E0")
-    division.place(relx=0, rely=0, anchor=tkinter.W)
-
-    side_line = ctk.CTkFrame(root, bg_color="white", width=4,
-                            height=170,  fg_color="#FFA826")
-    side_line.place(x=15, y=310)
-
-
-    #commands
-    def sair():
-        root.destroy()
-    
-    def openClient():
-        root.destroy()
-        newClientWindow()
-
-    def openDash():
-        root.destroy()
-        from dash import dashWindow
-        dashWindow()
-
-    def openServices():
-        root.destroy()
-        from services import servicesWindow
-        servicesWindow()
-
-    # images
-    logo = ctk.CTkImage(light_image=Image.open("assets\\logo.png"), size=(200,160))
-    dash_logo = ctk.CTkImage(light_image=Image.open(
-        "assets\\dashboard_logo.png"))
-    client_logo = ctk.CTkImage(light_image=Image.open("assets\\clients_logo_white.png"))
-    services_logo = ctk.CTkImage(
-        light_image=Image.open("assets\\services_logo.png"))
-    animals_logo = ctk.CTkImage(light_image=Image.open("assets\\animals_logo.png"))
-    exit_logo = ctk.CTkImage(light_image=Image.open("assets\\exit_logo.png"))
-    newButton_logo = ctk.CTkImage(light_image=Image.open("assets\\new.png"))
-
-    # labels
-    main_logo = ctk.CTkLabel(root, text="" ,image=logo, bg_color="#E0E0E0")
-
-    # buttons
-    dash_button = ctk.CTkButton(root, text="Dashboard", image=dash_logo, fg_color="white", text_color="black", 
-                                corner_radius=5, height=35, width=180, bg_color="#F2F2F2",  
-                                font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=openDash)
-    client_button = ctk.CTkButton(root, text="       Clientes", image=client_logo, corner_radius=7,
-                                fg_color="#F2800D", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
-    services_button = ctk.CTkButton(root, image=services_logo, text="      Serviços", text_color="black", corner_radius=7,
-                                    fg_color="white", height=35, width=180, bg_color="#E0E0E0",  
-                                    font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=openServices)
-    animals_button = ctk.CTkButton(root, image=animals_logo, text="        Animais", text_color="black", corner_radius=7,
-                                fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
-    exit_button = ctk.CTkButton(root, image=exit_logo, text="  Sair", text_color="black", corner_radius=7,
-                                fg_color="white", height=35, width=180, bg_color="#E0E0E0", compound="right", font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=sair)
-    new_button = ctk.CTkButton(root, image=newButton_logo, text="  Novo", corner_radius=7,fg_color="#FFA826",
-                                 height=35, width=180, bg_color="white", font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=openClient)
+    menuContainer = Menu(master=root, width=250, height=1450, txt_color="white", fg_color="#FFA826")
+    menuContainer.grid(row=0, column=0)
 
     ################ POSTER  ###############
 
@@ -193,18 +140,6 @@ def clientsWindow():
         family="Open Sans", size=16, weight="bold"), fg_color="white", text_color="#F2994A")
     price_value.place(relx=0.880, rely=0.575, anchor=tkinter.CENTER)
 
-    # posicionamento na tela
-
-    #logo
-    main_logo.place(x=30, y=60)
-    
-    #buttons
-    dash_button.place(x=40, y=300)
-    client_button.place(x=40, y=350)
-    services_button.place(x=40, y=400)
-    animals_button.place(x=40, y=450)
-    exit_button.place(x=40, y=600)
-    new_button.place(x=700, y=600)
 
 
     root.mainloop()
