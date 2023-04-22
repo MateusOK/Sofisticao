@@ -9,6 +9,9 @@ def newAnimalWindow():
     root.resizable(False, False)
     root.config(background="#FFFFFF")
 
+    root.iconbitmap("assets\\icon.ico")
+    root.title("Novo Animal")
+
     menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
 
@@ -21,6 +24,12 @@ def newAnimalWindow():
 
     #images
     save_logo = ctk.CTkImage(light_image=Image.open("assets\\salvar_logo.png"))
+    quit_logo = ctk.CTkImage(light_image=Image.open("assets\\quit.png"))
+
+    def backAnimals():
+        root.destroy()
+        from animal import animalWindow
+        animalWindow()
 
 
     #radioButtons
@@ -33,6 +42,8 @@ def newAnimalWindow():
     #buttons
     save_button = ctk.CTkButton(root, image=save_logo, text="  Salvar", text_color="white", corner_radius=7,
                                 fg_color="#FFA826", height=40, width=200, bg_color="#E0E0E0", font=ctk.CTkFont(family="Nunito", size=15, weight="bold"), hover_color="#F2800D", cursor="hand2")
+    quit_button = ctk.CTkButton(root, image=quit_logo, text="", text_color="white",
+        fg_color="white", height=5, width=5, bg_color="white", hover_color="white", command=backAnimals)
 
 
     #entrys
@@ -104,5 +115,6 @@ def newAnimalWindow():
 
     #buttons
     save_button.place(x=910, y=600)
+    quit_button.place(x=1080, y=100)
 
     root.mainloop()

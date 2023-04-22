@@ -9,7 +9,10 @@ def newServiceWindow():
     root.resizable(False, False)
     root.config(background="#FFFFFF")
 
-    menuContainer = Menu(master=root, width=250, height=1450, txt_color="green", fg_color="black")
+    root.iconbitmap("assets\\icon.ico")
+    root.title("Novo Atendimento")
+
+    menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
     
     #buttons

@@ -13,6 +13,9 @@ def dashWindow():
     menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
 
+    root.iconbitmap("assets\\icon.ico")
+    root.title("Dashboard")
+
     #buttons
     menuContainer.dashButton(bg_color="#E0E0E0", fg_color="#FFA826", text_color="white",image=menuContainer.dash_logo_white, master=root)
     menuContainer.clientButton(**padrao, image=menuContainer.client_logo, master=root)

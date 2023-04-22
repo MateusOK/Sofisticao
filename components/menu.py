@@ -93,10 +93,10 @@ class Menu(ctk.CTkFrame):
 
     def openAnimals(self):
         self.master.destroy()
-        #from animals import animalsWindow
-        #animalsWindow()
+        from animal import animalWindow
+        animalWindow()
 
     def sair(self):
         self.master.destroy()
-        #from main import loginWindow()
-        #loginWindow()
+        from main import loginWindow
+        loginWindow()

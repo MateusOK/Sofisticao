@@ -1,7 +1,6 @@
 import tkinter
 import customtkinter as ctk
 from PIL import Image
-from new_client import newClientWindow
 from components.menu import *
 from components.scrollClient import ClientScroll
 
@@ -11,6 +10,9 @@ def clientsWindow():
     root.geometry("1280x720")
     root.resizable(False, False)
     root.config(background="#FFFFFF")
+
+    root.iconbitmap("assets\\icon.ico")
+    root.title("Clientes")
 
     menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
@@ -36,7 +38,7 @@ def clientsWindow():
     search.place(x=505, y=70)
 
     btn_search = ctk.CTkButton(root, text="", image=search_logo, width=80, height=48,
-                               bg_color="white", fg_color="#FFA826", hover_color="#FF9D0A")
+                               bg_color="white", fg_color="#FFA826", hover_color="#FF9D0A", cursor="hand2")
     btn_search.place(x=1000, y=70)
 
     results_text = ctk.CTkLabel(root, text="5 resultados", font=ctk.CTkFont(
@@ -55,11 +57,17 @@ def clientsWindow():
 
     # Button - Add
 
+    def openNewClient():
+        root.destroy()
+        from new_client import newClientWindow
+        newClientWindow() 
+
+
     add_image = ctk.CTkImage(light_image=Image.open(
         "assets\\client__page\\add-icon.png"))
 
     add_button = ctk.CTkButton(root, text="Novo", image=add_image, font=ctk.CTkFont(
-        family="Nunito", size=13, weight="bold"), fg_color="#FFA826", text_color="#FFFFFF", hover_color="#FF9D0A")
+        family="Nunito", size=13, weight="bold"), fg_color="#FFA826", bg_color="white" ,text_color="#FFFFFF", hover_color="#FF9D0A", command=openNewClient)
     add_button.place(x=910, y=625)
 
     root.mainloop()

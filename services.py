@@ -1,7 +1,6 @@
 import tkinter
 import customtkinter as ctk
 from PIL import Image
-from new_service import newServiceWindow
 from components.menu import *
 from components.scrollContainer import MyFrame
 
@@ -11,6 +10,9 @@ def servicesWindow():
     root.geometry("1280x720")
     root.resizable(False, False)
     root.config(background="#FFFFFF")
+
+    root.iconbitmap("assets\\icon.ico")
+    root.title("Serviços")
 
     menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
@@ -54,12 +56,17 @@ def servicesWindow():
     boxContainer.place(relx=0.58, rely=0.558, anchor=tkinter.CENTER)
 
     # Button - Add
+    
+    def openNewservice():
+        root.destroy()
+        from new_service import newServiceWindow
+        newServiceWindow()
 
     add_image = ctk.CTkImage(light_image=Image.open(
         "assets\\client__page\\add-icon.png"))
 
     add_button = ctk.CTkButton(root, text="Adicionar", image=add_image, font=ctk.CTkFont(
-        family="Nunito", size=15, weight="bold"), height=35, fg_color="#FFA826", text_color="#FFFFFF", hover_color="#FF9D0A")
+        family="Nunito", size=15, weight="bold"), height=35, fg_color="#FFA826", bg_color="white" ,text_color="#FFFFFF", hover_color="#FF9D0A", command=openNewservice)
     add_button.place(x=1010, y=660)
 
     root.mainloop()
