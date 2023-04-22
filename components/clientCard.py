@@ -3,7 +3,7 @@ import customtkinter
 from PIL import Image
 
 
-class Card(customtkinter.CTkFrame):
+class ClientCard(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
         # container
@@ -75,12 +75,3 @@ class Card(customtkinter.CTkFrame):
         animal_title = customtkinter.CTkLabel(self, text="2 pets", font=customtkinter.CTkFont(
             family="Open Sans", size=16), fg_color="white", text_color="#292929")
         animal_title.place(x=475, y=15)
-
-
-root = Tk()
-root.geometry("1920x1080")
-lazy = Card(master=root)
-lazy.place(x=100, y=100)
-
-
-root.mainloop()
