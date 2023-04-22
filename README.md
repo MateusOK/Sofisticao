@@ -30,6 +30,8 @@ py main.py
 
 Para utilizar o software através de nosso instalador, basta instalá-lo por meio desse <a href="https://github.com/MateusOK/Sofisticao/releases/tag/Sofistic%C3%A3o">link</a>.
 
+O usuário e senha para login no sistema é: _admin_
+
 # Navegando pela aplicação
 
 ## Tela inicial
