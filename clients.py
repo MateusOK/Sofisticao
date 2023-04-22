@@ -50,10 +50,16 @@ def clientsWindow():
     title_poster.place(relx=0.6, rely=0.040, anchor=tkinter.CENTER)
 
     client__scroll = ClientScroll(
-        master=root, width=560, height=500, bg_color="white", fg_color="white")
+        master=root, width=560, height=450, bg_color="white", fg_color="white")
     client__scroll.place(x=500, y=150)
 
+    # Button - Add
+
+    add_image = ctk.CTkImage(light_image=Image.open(
+        "assets\\client__page\\add-icon.png"))
+
+    add_button = ctk.CTkButton(root, text="Novo", image=add_image, font=ctk.CTkFont(
+        family="Nunito", size=13, weight="bold"), fg_color="#FFA826", text_color="#FFFFFF", hover_color="#FF9D0A")
+    add_button.place(x=910, y=625)
+
     root.mainloop()
-
-
-clientsWindow()
