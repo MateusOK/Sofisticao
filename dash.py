@@ -1,10 +1,8 @@
 import tkinter
 import customtkinter as ctk
 from PIL import Image
-from clients import clientsWindow
-from services import servicesWindow
 from components.scrollContainer import MyFrame
-from components.menu import Menu
+from components.menu import *
 
 def dashWindow():
     root = ctk.CTk()  # create CTk window like you do with the Tk window
@@ -12,8 +10,15 @@ def dashWindow():
     root.resizable(False, False)
     root.config(background="#FFFFFF")
 
-    menuContainer = Menu(master=root, width=250, height=1450, txt_color="white", fg_color="#FFA826")
+    menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
+
+    #buttons
+    menuContainer.dashButton(bg_color="#E0E0E0", fg_color="#FFA826", text_color="white",image=menuContainer.dash_logo_white, master=root)
+    menuContainer.clientButton(**padrao, image=menuContainer.client_logo, master=root)
+    menuContainer.servicesButton(**padrao, image=menuContainer.services_logo, master=root)
+    menuContainer.animalsButton(**padrao, image=menuContainer.animals_logo, master=root)
+    menuContainer.exitButton(master=root)
    
     ################ POSTER  ###############
 

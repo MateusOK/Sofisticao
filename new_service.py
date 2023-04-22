@@ -1,6 +1,7 @@
 import tkinter
 import customtkinter as ctk
 from PIL import Image
+from components.menu import *
 
 def newServiceWindow():
     root = ctk.CTk()  # create CTk window like you do with the Tk window
@@ -8,60 +9,24 @@ def newServiceWindow():
     root.resizable(False, False)
     root.config(background="#FFFFFF")
 
-    division = ctk.CTkFrame(root, bg_color="white", width=250,
-                            height=1450,  fg_color="#E0E0E0")
-    division.place(relx=0, rely=0, anchor=tkinter.W)
-
-    side_line = ctk.CTkFrame(root, bg_color="white", width=4,
-                            height=170,  fg_color="#FFA826")
-    side_line.place(x=15, y=310)
-
-
-    #commands
-    def sair():
-        root.destroy()
+    menuContainer = Menu(master=root, width=250, height=1450, txt_color="green", fg_color="black")
+    menuContainer.grid(row=0, column=0)
     
-    def openDash():
-        root.destroy()
-        from dash import dashWindow
-        dashWindow()
-    
-    def backClients():
-        root.destroy()
-        from clients import clientsWindow
-        clientsWindow()
-    
+    #buttons
+    menuContainer.dashButton(**padrao, image=menuContainer.dash_logo, master=root)
+    menuContainer.clientButton(**padrao, image=menuContainer.client_logo, master=root)
+    menuContainer.servicesButton(bg_color="#E0E0E0", fg_color="#FFA826", text_color="white", image=menuContainer.services_logo_white, master=root)
+    menuContainer.animalsButton(**padrao, image=menuContainer.animals_logo, master=root)
+    menuContainer.exitButton(master=root)
+
     def backSerivces():
         root.destroy()
         from services import servicesWindow
         servicesWindow()
 
-    # images
-    logo = ctk.CTkImage(light_image=Image.open("assets\\logo.png"), size=(200,160))
-    dash_logo = ctk.CTkImage(light_image=Image.open("assets\\dashboard_logo.png"))
-    client_logo = ctk.CTkImage(light_image=Image.open("assets\\client_logo.png"))
-    services_logo = ctk.CTkImage(light_image=Image.open("assets\\services_logo_white.png"))
-    animals_logo = ctk.CTkImage(light_image=Image.open("assets\\animals_logo.png"))
-    exit_logo = ctk.CTkImage(light_image=Image.open("assets\\exit_logo.png"))
     save_logo = ctk.CTkImage(light_image=Image.open("assets\\salvar_logo.png"))
     quit_logo = ctk.CTkImage(light_image=Image.open("assets\\quit.png"))
-    
 
-    # labels
-    main_logo = ctk.CTkLabel(root, text="" ,image=logo, bg_color="#E0E0E0")
-
-    # buttons
-    dash_button = ctk.CTkButton(root, text="Dashboard", image=dash_logo, fg_color="white", text_color="black",
-                                corner_radius=5, height=35, width=180, bg_color="#F2F2F2",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=openDash)
-    client_button = ctk.CTkButton(root, text="       Clientes", image=client_logo, corner_radius=7, text_color="black",
-                                fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=backClients)
-    services_button = ctk.CTkButton(root, image=services_logo, text="      Serviços", corner_radius=7,
-                                    fg_color="#F2800D", height=35, width=180, bg_color="#E0E0E0",  
-                                    font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=backSerivces)
-    animals_button = ctk.CTkButton(root, image=animals_logo, text="        Animais", text_color="black", corner_radius=7,
-                                fg_color="white", height=35, width=180, bg_color="#E0E0E0",  font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D")
-    exit_button = ctk.CTkButton(root, image=exit_logo, text="  Sair", text_color="black", corner_radius=7,
-                                fg_color="white", height=35, width=180, bg_color="#E0E0E0", compound="right", font=ctk.CTkFont(family="Open Sans", size=12, weight="bold"), hover_color="#F2800D", command=sair)
     save_button = ctk.CTkButton(root, image=save_logo, text="  Salvar", text_color="white", corner_radius=7,
                                 fg_color="#FFA826", height=40, width=200, bg_color="#E0E0E0", font=ctk.CTkFont(family="Nunito", size=15, weight="bold"), hover_color="#F2800D", cursor="hand2")
     quit_button = ctk.CTkButton(root, image=quit_logo, text="", text_color="white",
@@ -104,14 +69,7 @@ def newServiceWindow():
 
     # posicionamento na tela
 
-    #logo
-    main_logo.place(x=30, y=60)
     #buttons
-    dash_button.place(x=40, y=300)
-    client_button.place(x=40, y=350)
-    services_button.place(x=40, y=400)
-    animals_button.place(x=40, y=450)
-    exit_button.place(x=40, y=600)
     save_button.place(x=905, y=440)
     quit_button.place(x=1080, y=150)
 

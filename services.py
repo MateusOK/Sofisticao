@@ -2,7 +2,8 @@ import tkinter
 import customtkinter as ctk
 from PIL import Image
 from new_service import newServiceWindow
-from components.menu import Menu
+from components.menu import *
+
 
 def servicesWindow():
     root = ctk.CTk()  # create CTk window like you do with the Tk window
@@ -11,9 +12,17 @@ def servicesWindow():
     root.config(background="#FFFFFF")
 
 
-    menuContainer = Menu(master=root, width=250, height=1450, txt_color="green", fg_color="black")
+    menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
     
+    #buttons
+    menuContainer.dashButton(**padrao, image=menuContainer.dash_logo, master=root)
+    menuContainer.clientButton(**padrao, image=menuContainer.client_logo, master=root)
+    menuContainer.servicesButton(bg_color="#E0E0E0", fg_color="#FFA826", text_color="white", image=menuContainer.services_logo_white, master=root)
+    menuContainer.animalsButton(**padrao, image=menuContainer.animals_logo, master=root)
+    menuContainer.exitButton(master=root)
+
+
     ############### CONTAINER - BOX ###############
 
     # container
