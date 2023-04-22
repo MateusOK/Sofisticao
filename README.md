@@ -36,39 +36,48 @@ O usuário e senha para login no sistema é: _admin_
 
 ## Tela inicial
 
-<img src="./assets/readme/main.png" />
+![main](https://user-images.githubusercontent.com/90118610/233806523-798a4821-0dba-469a-953c-9b9c4dcc602f.PNG)
+
 
 ## Tela inicial com credenciais incorretas
 
-<img src="./assets/readme/main_error.png" />
+![main_error](https://user-images.githubusercontent.com/90118610/233806538-41d135b8-5b28-42ee-8051-22d1e7c482c8.PNG)
+
 
 ## Dashboard
 
-<img src="./assets/readme/dashboard.png" />
+![dashboard](https://user-images.githubusercontent.com/90118610/233806546-ef2d150e-edc3-4671-a7a1-d0244d1736e8.PNG)
+
 
 ## Clientes
 
-<img src="./assets/readme/clientes.png" />
+![clientes](https://user-images.githubusercontent.com/90118610/233806550-24734790-0240-467a-ae4d-2407ce75cf1d.PNG)
+
 
 ## Adicionando Clientes
 
-<img src="./assets/readme/novo_cliente.png" />
+![novo_cliente](https://user-images.githubusercontent.com/90118610/233806558-241d165d-5f2e-4c50-a007-58a65995bc15.PNG)
+
 
 ## Serviços
 
-<img src="./assets/readme/services.png" />
+![services](https://user-images.githubusercontent.com/90118610/233806565-788c3706-957a-4c27-beff-dbba6c6aba54.PNG)
+
 
 ## Adicionando Serviços
 
-<img src="./assets/readme/new_services.png" />
+![new_services](https://user-images.githubusercontent.com/90118610/233806567-26899369-5c8e-41e4-a394-607948915736.PNG)
+
 
 ## Animais
 
-<img src="./assets/readme/animals.png" />
+![animals](https://user-images.githubusercontent.com/90118610/233806574-f144aeb3-61fc-43c2-a66a-68199d0a0917.PNG)
+
 
 ## Adicionando Animais
 
-<img src="./assets/readme/new_animal.png" />
+![new_animal](https://user-images.githubusercontent.com/90118610/233806579-7fe6c67b-88d0-4330-aa97-46789c7ca193.PNG)
+
 
 ## Tecnologias
 
