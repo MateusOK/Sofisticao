@@ -1,7 +1,7 @@
 import tkinter
 import customtkinter as ctk
 from PIL import Image
-from components.menu import Menu
+from components.menu import *
 
 def newAnimalWindow():
     root = ctk.CTk()  # create CTk window like you do with the Tk window
@@ -9,8 +9,15 @@ def newAnimalWindow():
     root.resizable(False, False)
     root.config(background="#FFFFFF")
 
-    menuContainer = Menu(master=root, width=250, height=1450, txt_color="white", fg_color="#FFA826")
+    menuContainer = Menu(master=root, width=250, height=1450)
     menuContainer.grid(row=0, column=0)
+
+    #buttons
+    menuContainer.dashButton(**padrao,image=menuContainer.dash_logo, master=root)
+    menuContainer.clientButton(**padrao, image=menuContainer.client_logo, master=root)
+    menuContainer.servicesButton(**padrao, image=menuContainer.services_logo, master=root)
+    menuContainer.animalsButton(bg_color="#E0E0E0", fg_color="#FFA826", text_color="white", image=menuContainer.animals_logo_white, master=root)
+    menuContainer.exitButton(master=root)
 
     #images
     save_logo = ctk.CTkImage(light_image=Image.open("assets\\salvar_logo.png"))
@@ -99,4 +106,3 @@ def newAnimalWindow():
     save_button.place(x=910, y=600)
 
     root.mainloop()
-newAnimalWindow()
